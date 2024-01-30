@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <anchored-heading content="wahaha"></anchored-heading>
+    </div>
+
+    <!-- 存放html模版 -->
+    <script type="text/x-template" id="anchored-heading-template">
+      <h1>{{ content }}</h1>
+    </script>
+
+    <script>
+      let anchoredHeading = {
+        template: "#anchored-heading-template",
+        props: ["content"],
+      };
+      Vue.createApp({}).component("anchored-heading", anchoredHeading).mount("#app");
+    </script>
+  </body>
+</html>
